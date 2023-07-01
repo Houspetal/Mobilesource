@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1023403984139",
+    "project_id": "housepital-6753d",
+    "storage_bucket": "housepital-6753d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023403984139:android:4a94d05787b73dcaea8e0e",
+        "android_client_info": {
+          "package_name": "com.example.grade_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023403984139-inn1qao7s4988vna33gasbbmcaoo0tas.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHojGeCbcRDxQ5zH0ywXtVKDvEONH8Jt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023403984139-inn1qao7s4988vna33gasbbmcaoo0tas.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1023403984139-dqb9635uq5e35rqvfpln25la61b56h6k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gradeProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
