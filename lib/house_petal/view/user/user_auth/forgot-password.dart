@@ -70,8 +70,7 @@ class UserForgotPasswordScreen extends StatelessWidget {
                     children: [
                       CustomTextFormField(
                         hint: 'Email Address',
-                        prefixIcon:
-                            "assets/news-app/images/envelope-2-1-C9h.png",
+                        prefixIcon: Icons.email_outlined,
                         obscureText: true,
                         alignment: Alignment.center,
                         controller: TextEditingController(),

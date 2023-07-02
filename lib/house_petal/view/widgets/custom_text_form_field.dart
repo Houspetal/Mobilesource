@@ -19,11 +19,13 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixPressed,
     required this.ffem,
     required this.fem,
+    this.onTap,
   }) : super(key: key);
   final String hint;
   final IconData? suffixIcon;
-  final String prefixIcon;
+  final IconData prefixIcon;
   final bool obscureText;
+  final GestureTapCallback? onTap;
   final Alignment alignment;
   final TextEditingController controller;
   final ValueChanged<String>? onSave;
@@ -47,6 +49,7 @@ class CustomTextFormField extends StatelessWidget {
         child: TextFormField(
           controller: controller,
           validator: validator,
+          onTap: onTap,
           onChanged: onChanged,
           cursorColor: textColor,
           style: SafeGoogleFont(
@@ -68,16 +71,9 @@ class CustomTextFormField extends StatelessWidget {
               height: 1.5 * ffem / fem,
               color: textColor,
             ),
-            prefixIcon: Container(
+            prefixIcon: Icon(
               // envelope21Sgb (2:339)
-              margin: EdgeInsets.fromLTRB(17 * fem, 0 * fem, 17 * fem, 0 * fem),
-              width: 10 * fem,
-              height: 10 * fem,
-              child: Image.asset(
-                prefixIcon,
-                width: 10 * fem,
-                height: 10 * fem,
-              ),
+              prefixIcon,
             ),
             suffixIcon: IconButton(
               icon: Icon(suffixIcon),

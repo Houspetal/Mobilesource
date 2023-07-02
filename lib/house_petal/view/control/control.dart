@@ -31,7 +31,7 @@ class ControlScreen extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: SafeArea(
             child: Column(
-              children: [],
+              children: const [],
             ),
           ),
         ),

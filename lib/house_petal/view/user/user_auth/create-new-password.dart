@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../shared/constants.dart';
 import '../../widgets/custom_button.dart';
@@ -71,7 +72,7 @@ class UserCreateNewPasswordScreen extends StatelessWidget {
                   children: [
                     CustomTextFormField(
                       hint: "New Password",
-                      prefixIcon: "assets/news-app/images/padlock-2-1-7gP.png",
+                      prefixIcon: FontAwesomeIcons.userSecret,
                       obscureText: true,
                       alignment: Alignment.center,
                       controller: TextEditingController(),
@@ -84,7 +85,7 @@ class UserCreateNewPasswordScreen extends StatelessWidget {
                     ),
                     CustomTextFormField(
                       hint: "Repeat New Password",
-                      prefixIcon: "assets/news-app/images/padlock-2-1-7gP.png",
+                      prefixIcon: FontAwesomeIcons.userSecret,
                       obscureText: true,
                       alignment: Alignment.center,
                       controller: TextEditingController(),

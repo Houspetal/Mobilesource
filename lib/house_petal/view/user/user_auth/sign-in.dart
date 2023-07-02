@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../shared/constants.dart';
 import '../../widgets/custom_button.dart';
@@ -73,8 +74,7 @@ class UserSignInScreen extends StatelessWidget {
                     children: [
                       CustomTextFormField(
                         hint: "Email Address",
-                        prefixIcon:
-                            'assets/news-app/images/envelope-2-1-LP5.png',
+                        prefixIcon: Icons.email_outlined,
                         obscureText: false,
                         alignment: Alignment.center,
                         controller: TextEditingController(),
@@ -87,8 +87,7 @@ class UserSignInScreen extends StatelessWidget {
                       ),
                       CustomTextFormField(
                         hint: "Password",
-                        prefixIcon:
-                            'assets/news-app/images/padlock-2-1-X7y.png',
+                        prefixIcon: FontAwesomeIcons.userSecret,
                         obscureText: false,
                         alignment: Alignment.center,
                         controller: TextEditingController(),
