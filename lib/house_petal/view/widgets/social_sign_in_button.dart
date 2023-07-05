@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../shared/constants.dart';
+import '../../shared/constants/colors.dart';
 import 'utils.dart';
 
 class SocialSignInButton extends StatelessWidget {
@@ -13,7 +14,8 @@ class SocialSignInButton extends StatelessWidget {
     required this.onTap,
   }) : super(key: key);
   final double ffem, fem;
-  final String text, image;
+  final String text;
+  final IconData image;
   final Function onTap;
 
   @override
@@ -37,9 +39,8 @@ class SocialSignInButton extends StatelessWidget {
                   EdgeInsets.fromLTRB(0 * fem, 0 * fem, 61.5 * fem, 0 * fem),
               width: 24 * fem,
               height: 24 * fem,
-              child: Image.asset(
+              child: FaIcon(
                 image,
-                fit: BoxFit.cover,
               ),
             ),
             Text(

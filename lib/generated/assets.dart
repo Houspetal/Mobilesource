@@ -32,6 +32,9 @@ class Assets {
   static const String imagesBanner1 = 'assets/images/banner1.jpg';
   static const String imagesBanner2 = 'assets/images/banner2.jpg';
   static const String imagesBanner3 = 'assets/images/banner3.jpg';
+  static const String svgAdmin = 'assets/svg/admin.svg';
+  static const String svgDoctor = 'assets/svg/doctor.svg';
+  static const String svgUser = 'assets/svg/user.svg';
   static const String zipFamilyProtectedFromVirus =
       'assets/zip/family-protected-from-virus.zip';
   static const String zipFlutterIconsDf97205c =

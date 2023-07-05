@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>grade_project</string>
+	<string>House Petal</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -47,5 +47,20 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb2369895260010966</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>2369895260010966</string>
+    <key>FacebookClientToken</key>
+    <string>a66a560246c9a7fc16874eb91049e623</string>
+    <key>FacebookDisplayName</key>
+    <string>graduation_project</string>
 </dict>
 </plist>

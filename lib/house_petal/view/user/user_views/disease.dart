@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grade_project/house_petal/logic/user_disease/user_disease_cubit.dart';
 
-import 'diseasedetail.dart';
+import 'disease_detail.dart';
 
-class Disease extends StatefulWidget {
-  const Disease({super.key});
+class Disease extends StatelessWidget {
+  const Disease({
+    super.key,
+  });
 
-  @override
-  _DiseaseState createState() => _DiseaseState();
-}
-
-class _DiseaseState extends State<Disease> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,56 +27,68 @@ class _DiseaseState extends State<Disease> {
             color: Colors.black,
           ),
         ),
-        body: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) => Container(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 0),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 10,
-              decoration: const BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: Colors.black87,
-                width: 0.2,
-              ))),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DiseaseDetail(
-                              disease: "document['Name']",
-                            )),
-                  );
-                },
-                child: Row(
-                  children: [
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "document['Name']",
-                          style: GoogleFonts.lato(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.black87,
+        body: BlocConsumer<UserDiseaseCubit, UserDiseaseStates>(
+          listener: (context, state) {
+            // TODO: implement listener
+          },
+          builder: (context, state) {
+            return ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) => Container(
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 0),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 10,
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(
+                    color: Colors.black87,
+                    width: 0.2,
+                  ))),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DiseaseDetail(
+                            disease:
+                                UserDiseaseCubit.of(context).diseases[index],
                           ),
                         ),
-                        Text(
-                          "document['Symtomps']",
-                          style: GoogleFonts.lato(
-                              fontSize: 14, color: Colors.black54),
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "${UserDiseaseCubit.of(context).diseases[index].name}",
+                              style: GoogleFonts.lato(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            ),
+                            Text(
+                              "${UserDiseaseCubit.of(context).diseases[index].name} disease",
+                              style: GoogleFonts.lato(
+                                fontSize: 14,
+                                color: Colors.black54,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                  ],
-                ),
-              )),
-          itemCount: 10,
+                  )),
+              itemCount: UserDiseaseCubit.of(context).diseases.length,
+            );
+          },
         ));
   }
 }

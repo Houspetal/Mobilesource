@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:grade_project/house_petal/logic/user_auth/user_auth_cubit.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../logic/user_auth/user_auth_cubit.dart';
-
-class AdminScreen extends StatefulWidget {
-  const AdminScreen({super.key});
+class DoctorScreen extends StatefulWidget {
+  const DoctorScreen({super.key});
   @override
-  State<AdminScreen> createState() => _AdminScreenState();
+  State<DoctorScreen> createState() => _DoctorScreenState();
 }
 
-class _AdminScreenState extends State<AdminScreen> {
+class _DoctorScreenState extends State<DoctorScreen> {
   late final WebViewController controller;
   @override
   void initState() {
@@ -19,7 +18,7 @@ class _AdminScreenState extends State<AdminScreen> {
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(const Color(0x00000000))
       ..loadRequest(
-        Uri.parse('https://drapp.website/admin'),
+        Uri.parse('https://drapp.website/doctor'),
       );
   }
 
@@ -43,7 +42,7 @@ class _AdminScreenState extends State<AdminScreen> {
         backgroundColor: const Color(0xFF071251),
         toolbarHeight: 40,
         title: const Text(
-          "Admin",
+          "Doctor",
           style: TextStyle(color: Colors.white54),
         ),
         centerTitle: true,
