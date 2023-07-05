@@ -297,7 +297,7 @@ class UserSignUpScreen extends StatelessWidget {
                                   );
                                 },
                                 child: Text(
-                                  ' Sign Up',
+                                  ' Log in',
                                   style: SafeGoogleFont(
                                     'SF Pro Text',
                                     fontSize: 16 * ffem,

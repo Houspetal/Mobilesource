@@ -19,15 +19,16 @@ part 'user_auth_state.dart';
 
 class UserAuthCubit extends Cubit<UserAuthStates> {
   UserAuthCubit() : super(UserAuthInitial());
-  bool isVisible = false;
+  bool isPass = true;
   FirebaseAuth auth = FirebaseAuth.instance;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
   GlobalKey<FormState> resetPasswordFormKey = GlobalKey<FormState>();
+
   bool changePassVisibility() {
-    isVisible = !isVisible;
+    isPass = !isPass;
     emit(UserAuthChangePasswordVisibilityState());
-    return isVisible;
+    return isPass;
   }
 
   TextEditingController loginEmailController = TextEditingController();
@@ -45,6 +46,7 @@ class UserAuthCubit extends Cubit<UserAuthStates> {
   }
 
   Future<void> signInWithGoogle(BuildContext context) async {
+    emit(UserAuthGoogleLoginLoadingState());
     try {
       // Trigger the authentication flow
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -59,26 +61,36 @@ class UserAuthCubit extends Cubit<UserAuthStates> {
       );
 
       // Once signed in, return the UserCredential
-      await FirebaseAuth.instance
+      FirebaseAuth.instance
           .signInWithCredential(credential)
           .then((user1) async {
+        await CacheHelper.setData(key: "uid", value: user1.user!.uid);
+        uid = user1.user!.uid;
         await saveUserToFirestore(
           id: user1.user!.uid,
           name: user1.user!.displayName!,
           email: user1.user!.email!,
-          phone: user1.user!.phoneNumber!,
-        );
-        await CacheHelper.setData(key: "uid", value: user1.user!.uid);
-        String? userJson = await CacheHelper.getData(key: "user");
-        uid = user1.user!.uid;
-        user = UserModel.fromJson(
-          json.decode(userJson!),
-        );
+        ).then((value) async {
+          String? userJson = await CacheHelper.getData(key: "user");
+          if (userJson != null) {
+            user = UserModel.fromJson(
+              json.decode(userJson),
+            );
+          }
+          getToast(
+            text: "Login Successfully\nWelcome back",
+            state: ToastStates.SUCCESS,
+          );
+          emit(UserAuthGoogleLoginSuccessState());
+        }).catchError((error) {
+          print(error.toString());
+          print("error.toString()");
+        });
       });
       navigateToHome(context);
-      emit(UserAuthGoogleLoginSuccessState());
     } catch (e) {
       print(e.toString());
+      print("error");
       emit(UserAuthGoogleLoginErrorState());
     }
   }
@@ -240,11 +252,12 @@ class UserAuthCubit extends Cubit<UserAuthStates> {
     );
   }
 
-  Future<void> saveUserToFirestore(
-      {required String id,
-      required String email,
-      required String name,
-      required String phone}) async {
+  Future<void> saveUserToFirestore({
+    required String id,
+    required String email,
+    required String name,
+    String? phone,
+  }) async {
     UserModel model = UserModel(
       uId: id,
       email: email,

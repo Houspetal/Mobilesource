@@ -101,7 +101,7 @@ class UserForgotPasswordScreen extends StatelessWidget {
                               fem: fem,
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 40,
                             ),
                             state is UserAuthChangePasswordLoadingState
                                 ? const Center(

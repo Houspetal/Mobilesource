@@ -170,7 +170,7 @@ class UserSignInScreen extends StatelessWidget {
                                 )
                               : CustomButton(
                                   color: primaryColor,
-                                  text: "Sign In",
+                                  text: "Log in",
                                   width: double.infinity,
                                   onPressed: () {
                                     if (UserAuthCubit.of(context)

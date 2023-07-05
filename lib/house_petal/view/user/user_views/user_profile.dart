@@ -167,7 +167,9 @@ class UserProfile extends StatelessWidget {
                                   width: 10,
                                 ),
                                 Text(
-                                  user!.phone!,
+                                  user!.phone == null
+                                      ? "Not Set"
+                                      : user!.phone!,
                                   style: GoogleFonts.lato(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w600,
