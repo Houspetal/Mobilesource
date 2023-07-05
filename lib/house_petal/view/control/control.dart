@@ -38,9 +38,10 @@ class ControlScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
+                  width: 300,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: primaryColor.withOpacity(.2),
+                      color: primaryColor.withOpacity(.4),
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -61,7 +62,7 @@ class ControlScreen extends StatelessWidget {
                           style: ButtonStyle(
                             foregroundColor:
                                 const MaterialStatePropertyAll<Color>(
-                              textColor2,
+                              Colors.black87,
                             ),
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
@@ -76,7 +77,7 @@ class ControlScreen extends StatelessWidget {
                               TextStyle(
                                 fontSize: 18,
                                 shadows: [
-                                  Shadow(color: textColor, blurRadius: 12)
+                                  Shadow(color: textColor, blurRadius: 40)
                                 ],
                               ),
                             ),
@@ -103,9 +104,10 @@ class ControlScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  width: 300,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: primaryColor.withOpacity(.2),
+                      color: primaryColor.withOpacity(.4),
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -126,7 +128,7 @@ class ControlScreen extends StatelessWidget {
                           style: ButtonStyle(
                             foregroundColor:
                                 const MaterialStatePropertyAll<Color>(
-                              textColor2,
+                              Colors.black87,
                             ),
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
@@ -167,9 +169,10 @@ class ControlScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  width: 300,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: primaryColor.withOpacity(.2),
+                      color: primaryColor.withOpacity(.4),
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -205,12 +208,14 @@ class ControlScreen extends StatelessWidget {
                         },
                         style: ButtonStyle(
                           foregroundColor:
-                              const MaterialStatePropertyAll<Color>(textColor2),
+                              const MaterialStatePropertyAll<Color>(
+                            Colors.black87,
+                          ),
                           textStyle: const MaterialStatePropertyAll<TextStyle>(
                             TextStyle(
                               fontSize: 18,
                               shadows: [
-                                Shadow(color: textColor, blurRadius: 12)
+                                Shadow(color: textColor, blurRadius: 40)
                               ],
                             ),
                           ),

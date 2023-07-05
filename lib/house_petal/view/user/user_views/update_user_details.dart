@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grade_project/house_petal/logic/user_profile/user_profile_cubit.dart';
+import 'package:grade_project/house_petal/shared/constants/colors.dart';
 import 'package:grade_project/house_petal/view/widgets/custom_text_form_field.dart';
 
 class UpdateUserDetails extends StatelessWidget {
@@ -23,7 +24,7 @@ class UpdateUserDetails extends StatelessWidget {
           },
           child: const Icon(
             Icons.arrow_back_ios,
-            color: Colors.indigo,
+            color: primaryColor,
           ),
         ),
         title: Container(
@@ -31,7 +32,7 @@ class UpdateUserDetails extends StatelessWidget {
           child: Text(
             "Update $label",
             style: GoogleFonts.lato(
-              color: Colors.indigo,
+              color: primaryColor,
               fontSize: 21,
               fontWeight: FontWeight.bold,
             ),
@@ -93,7 +94,7 @@ class UpdateUserDetails extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black,
-                        backgroundColor: Colors.indigo.withOpacity(0.9),
+                        backgroundColor: primaryColor,
                         elevation: 2,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32.0),

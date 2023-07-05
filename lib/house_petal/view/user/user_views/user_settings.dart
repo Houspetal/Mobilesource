@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grade_project/house_petal/logic/user_auth/user_auth_cubit.dart';
+import 'package:grade_project/house_petal/shared/constants/colors.dart';
 import 'package:grade_project/house_petal/view/user/user_views/update_profile_image_details.dart';
 
 import '../../../shared/constants/constants.dart';
@@ -28,7 +29,7 @@ class _UserSettingsState extends State<UserSettings> {
             splashRadius: 25,
             icon: const Icon(
               Icons.arrow_back_ios,
-              color: Colors.indigo,
+              color: primaryColor,
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -36,7 +37,7 @@ class _UserSettingsState extends State<UserSettings> {
         title: Text(
           'User Settings',
           style: GoogleFonts.lato(
-              color: Colors.indigo, fontSize: 20, fontWeight: FontWeight.bold),
+              color: primaryColor, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       body: SingleChildScrollView(

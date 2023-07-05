@@ -43,8 +43,8 @@ class UserProfile extends StatelessWidget {
                                     end: Alignment.bottomCenter,
                                     stops: [0.1, 0.5],
                                     colors: [
-                                      Colors.indigo,
-                                      Colors.indigoAccent,
+                                      Colors.pinkAccent,
+                                      primaryColor,
                                     ],
                                   ),
                                 ),
@@ -206,7 +206,7 @@ class UserProfile extends StatelessWidget {
                                   child: Container(
                                     height: 27,
                                     width: 27,
-                                    color: Colors.indigo[600],
+                                    color: primaryColor,
                                     child: const Icon(
                                       FontAwesomeIcons.pencil,
                                       color: Colors.white,

@@ -102,14 +102,17 @@ class SplashScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 3,
-              child: Image.asset(
-                "assets/414.jpg",
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Center(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 3,
+                child: Image.asset(
+                  "assets/logo.png",
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 3,
+                ),
               ),
             ),
           ),

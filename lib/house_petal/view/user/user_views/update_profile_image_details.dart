@@ -26,7 +26,7 @@ class UpdateUserProfileDetails extends StatelessWidget {
           },
           child: const Icon(
             Icons.arrow_back_ios,
-            color: Colors.indigo,
+            color: primaryColor,
           ),
         ),
         title: Container(
@@ -34,7 +34,7 @@ class UpdateUserProfileDetails extends StatelessWidget {
           child: Text(
             "Update $label",
             style: GoogleFonts.lato(
-              color: Colors.indigo,
+              color: primaryColor,
               fontSize: 21,
               fontWeight: FontWeight.bold,
             ),

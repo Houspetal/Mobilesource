@@ -18,6 +18,7 @@ class Assets {
   static const String assetsImageMedical = 'assets/image-medical.jpg';
   static const String assetsImageMedical2 = 'assets/image-medical-2.jpg';
   static const String assetsImageMedical3 = 'assets/image-medical-3.jpg';
+  static const String assetsLogo = 'assets/logo.png';
   static const String assetsMedicalRed = 'assets/medical-red.png';
   static const String assetsPerson = 'assets/person.jpg';
   static const String assetsPersonasVectorSet =

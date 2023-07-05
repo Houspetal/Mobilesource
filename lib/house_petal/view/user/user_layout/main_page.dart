@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:grade_project/house_petal/shared/constants/colors.dart';
 import 'package:grade_project/house_petal/view/user/user_views/user_profile.dart';
 import 'package:typicons_flutter/typicons_flutter.dart';
 
@@ -76,7 +77,7 @@ class _MainPageState extends State<MainPage> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 duration: const Duration(milliseconds: 500),
-                tabBackgroundColor: Colors.blue.withOpacity(0.7),
+                tabBackgroundColor: primaryColor,
                 textStyle: GoogleFonts.lato(
                   color: Colors.white,
                 ),

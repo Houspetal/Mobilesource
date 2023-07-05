@@ -82,12 +82,12 @@ class UserAuthCubit extends Cubit<UserAuthStates> {
             state: ToastStates.SUCCESS,
           );
           emit(UserAuthGoogleLoginSuccessState());
+          navigateToHome(context);
         }).catchError((error) {
           print(error.toString());
           print("error.toString()");
         });
       });
-      navigateToHome(context);
     } catch (e) {
       print(e.toString());
       print("error");
@@ -264,10 +264,9 @@ class UserAuthCubit extends Cubit<UserAuthStates> {
       username: name,
       phone: phone,
     );
-    await FirebaseFirestore.instance
-        .collection("Users")
-        .doc(id)
-        .set(model.toJson());
+    await FirebaseFirestore.instance.collection("Users").doc(id).set(
+          model.toJson(),
+        );
     await CacheHelper.setData(key: "user", value: json.encode(model.toJson()));
   }
 

@@ -3,11 +3,11 @@ import 'package:sqflite/sqflite.dart';
 
 class DBHelper {
   static late Database database;
-  static String name = "CartProducts";
+  static String name = "users";
 
   static Future<void> init() async {
 // Get a location using getDatabasesPath
-    String path = "${await getDatabasesPath()}CartProducts.db";
+    String path = "${await getDatabasesPath()}users.db";
 
 // open the database
     database = await openDatabase(
@@ -19,7 +19,7 @@ class DBHelper {
             .execute('CREATE TABLE $name '
             '(id INTEGER PRIMARY KEY,'
             'name STRING,'
-            'productId STRING,'
+            'userid STRING,'
             'image STRING,'
             'price STRING,'
             'quantity INTEGER)')

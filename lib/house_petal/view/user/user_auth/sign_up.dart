@@ -63,9 +63,7 @@ class UserSignUpScreen extends StatelessWidget {
                 ),
               ),
               BlocConsumer<UserAuthCubit, UserAuthStates>(
-                listener: (context, state) {
-                  // TODO: implement listener
-                },
+                listener: (context, state) {},
                 builder: (context, state) {
                   return Form(
                     key: UserAuthCubit.of(context).signupFormKey,
