@@ -20,6 +20,7 @@ class Assets {
   static const String assetsImageMedical3 = 'assets/image-medical-3.jpg';
   static const String assetsLogo = 'assets/logo.png';
   static const String assetsMedicalRed = 'assets/medical-red.png';
+  static const String assetsMyPhoto = 'assets/my_photo.jpg';
   static const String assetsPerson = 'assets/person.jpg';
   static const String assetsPersonasVectorSet =
       'assets/personas-vector-set.jpg';
@@ -36,16 +37,5 @@ class Assets {
   static const String svgAdmin = 'assets/svg/admin.svg';
   static const String svgDoctor = 'assets/svg/doctor.svg';
   static const String svgUser = 'assets/svg/user.svg';
-  static const String zipFamilyProtectedFromVirus =
-      'assets/zip/family-protected-from-virus.zip';
-  static const String zipFlutterIconsDf97205c =
-      'assets/zip/flutter-icons-df97205c.zip';
-  static const String zipMedicalWorkersAnalyzingElectronicRecord =
-      'assets/zip/medical-workers-analyzing-electronic-record.zip';
-  static const String zipOnlineDoctorConsultationIllustration =
-      'assets/zip/online-doctor-consultation-illustration.zip';
-  static const String zipVecteezyPersonasVectorSetForYourNextProject132889 =
-      'assets/zip/vecteezy_personas-vector-set-for-your-next-project_132889.zip';
-  static const String zipVirusConceptIllustration =
-      'assets/zip/virus-concept-illustration.zip';
+  static const String svgWaiting = 'assets/svg/waiting.svg';
 }
