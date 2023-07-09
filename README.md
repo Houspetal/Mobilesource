@@ -1,6 +1,6 @@
-# grade_project
+# Housepital
 
-A new Flutter project.
+A new Medical appointment booking system that allow users to book appointments with Experienced Doctors and allow doctors to manage the users and thier appointments.
 
 ## Getting Started
 
